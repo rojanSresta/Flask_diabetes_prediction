@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Prediction</title>
+  </head>
+  <body>
+    <div class="form">
+      <form action="{{ url_for('predict') }}" method="POST">
+        <input
+          type="number"
+          placeholder="Pregnancies"
+          name="Pregnancies"
+          required
+        />
+        <input type="number" placeholder="Glucose" name="Glucose" required />
+        <input
+          type="number"
+          placeholder="BloodPressure"
+          name="BloodPressure"
+          required
+        />
+        <input
+          type="number"
+          placeholder="SkinThickness"
+          name="SkinThickness"
+          required
+        />
+        <input type="number" placeholder="Insulin" name="Insulin" required />
+        <input type="number" placeholder="BMI" name="BMI" step="any" required />
+        <input
+          type="number"
+          placeholder="DiabetesPedigreeFunction"
+          name="DiabetesPedigreeFunction"
+          step="any"
+          required
+        />
+        <input type="number" placeholder="Age" name="Age" required />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+  </body>
+</html>
