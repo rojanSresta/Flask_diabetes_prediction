@@ -4,41 +4,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diabetes Prediction</title>
+    <style>
+      body{
+        background-color: #a6192e;
+      }
+      .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .form input {
+        margin: 5px;
+        width: 20rem;
+        height: 3rem;
+      }
+      #heading {
+        text-align: center;
+        color: white;
+      }
+      #btn{
+        cursor: pointer;
+        color: white;
+        background-color: teal;
+        border: none;
+        border-radius: 15px;
+        font-weight: bold;
+      }
+      #btn:hover{
+        background-color: rgb(192, 31, 19);
+        font-weight: bolder;
+      }
+    </style>
   </head>
   <body>
+    <h1 id="heading">DIABETES PREDICTION</h1>
     <div class="form">
-      <form action="{{ url_for('predict') }}" method="POST">
-        <input
+      <fieldset>
+        <legend></legend>
+        <form action="{{ url_for('predict') }}" method="POST">
+          <input
           type="number"
           placeholder="Pregnancies"
           name="Pregnancies"
           required
         />
+        <br />
         <input type="number" placeholder="Glucose" name="Glucose" required />
+        <br />
         <input
           type="number"
           placeholder="BloodPressure"
           name="BloodPressure"
           required
-        />
-        <input
+          />
+          <br />
+          <input
           type="number"
           placeholder="SkinThickness"
           name="SkinThickness"
           required
-        />
-        <input type="number" placeholder="Insulin" name="Insulin" required />
-        <input type="number" placeholder="BMI" name="BMI" step="any" required />
-        <input
+          />
+          <br />
+          <input type="number" placeholder="Insulin" name="Insulin" required />
+          <br />
+          <input type="number" placeholder="BMI" name="BMI" step="any" required />
+          <br />
+          <input
           type="number"
           placeholder="DiabetesPedigreeFunction"
           name="DiabetesPedigreeFunction"
           step="any"
           required
-        />
-        <input type="number" placeholder="Age" name="Age" required />
-        <input type="submit" value="submit" />
-      </form>
-    </div>
-  </body>
-</html>
+          />
+          <br />
+          <input type="number" placeholder="Age" name="Age" required />
+          <br />
+          <input id="btn" type="submit" value="Submit" />
+          <br />
+        </fieldset>
+        </form>
+      </div>
+    </body>
+    </html>
+    

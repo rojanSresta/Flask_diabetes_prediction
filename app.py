@@ -50,9 +50,10 @@ def predict():
     std_data = sc.transform(input_data)
     prediction = model.predict(std_data)
     if (prediction[0]==0):
-        result = "You have  not diabetes"
+        result = "You don't have diabetes."
     else:
-        result = "diabetes"
+        result = "You have diabetes"
+        
     return render_template('result.html', result = result)
     
 if __name__ == '__main__':

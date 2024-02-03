@@ -3,9 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Result</title>
+    <style>
+      body {
+        background-color: #a6192e;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .predictionBox {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h1 {
+        color: #333333;
+      }
+
+      #result {
+        background: transparent;
+        color: aqua;
+        margin-top: 1rem;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <p>Result: {{result}}</p>
+    <div class="predictionBox">
+      <h1 id="result">{{result}}</h1>
+    </div>
   </body>
 </html>
