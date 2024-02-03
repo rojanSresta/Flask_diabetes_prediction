@@ -18,6 +18,7 @@ def home():
 
     y=cdf['Outcome']
 
+    global sc
     sc=StandardScaler()
     X_std = sc.fit_transform(X)
 
@@ -41,14 +42,17 @@ def predict():
     bmi = float(request.form['BMI'])
     DiabetesPedigreeFunction = float(request.form['DiabetesPedigreeFunction'])
     age = float(request.form['Age'])
+
+    model = pickle.load(open("diabetes.pkl", "rb"))
+
     n = np.array([pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, DiabetesPedigreeFunction, age])
     input_data = n.reshape(1, -1)
-    model = pickle.load(open("diabetes.pkl", "rb"))
-    prediction = model.predict(input_data)[0]
-    if prediction==1:
-        result = "You have diabetes"
+    std_data = sc.transform(input_data)
+    prediction = model.predict(std_data)
+    if (prediction[0]==0):
+        result = "You have  not diabetes"
     else:
-        result = "No diabetes"
+        result = "diabetes"
     return render_template('result.html', result = result)
     
 if __name__ == '__main__':
